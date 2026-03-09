@@ -24,3 +24,70 @@ El objetivo del proyecto es simular un escenario industrial como:
 - Supervisión de temperatura en tiempo real
 
 El pipeline permite detectar anomalías de temperatura, almacenar históricos de medición y habilitar análisis analíticos y dashboards operacionales.
+
+</div>
+
+## ⚙️ ¿Por qué usar esta arquitectura?
+
+La arquitectura Cloud Function → Pub/Sub → Dataflow → BigQuery → Looker Studio fue diseñada para resolver los principales desafíos de sistemas IoT industriales:
+
+| Tecnología          | Razón de uso                                                                                                                    |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Cloud Functions** | Permite recibir datos desde sensores vía HTTP sin administrar servidores. Es ideal para eventos generados por dispositivos IoT. |
+| **Pub/Sub**         | Actúa como un buffer desacoplado que soporta millones de eventos por segundo y permite escalar el sistema sin perder mensajes.  |
+| **Dataflow**        | Motor de procesamiento streaming basado en Apache Beam que permite limpiar, transformar y enriquecer datos en tiempo real.      |
+| **BigQuery**        | Data Warehouse serverless optimizado para análisis analítico sobre grandes volúmenes de datos históricos.                       |
+| **Looker Studio**   | Plataforma de visualización que permite construir dashboards operacionales conectados directamente a BigQuery.                  |
+
+
+**Ventajas principales de esta arquitectura**
+
+📡 Procesamiento en tiempo real
+
+⚡ Alta escalabilidad para miles de sensores
+
+🧩 Arquitectura desacoplada
+
+☁️ 100% serverless
+
+📊 Analytics-ready
+
+## 🏛️ Arquitectura
+
+### ➡️ Flujo de Datos Principal
+
+```
+🌡️ Sensor IoT (ESP32)
+        ↓
+☁️ Cloud Function (HTTP Ingestion)
+        ↓
+📨 Pub/Sub Topic
+        ↓
+⚡ Dataflow Streaming Pipeline
+        ↓
+🗄️ BigQuery (Data Warehouse)
+        ↓
+📊 Looker Studio Dashboard
+```
+
+### ➡️ Flujo de Datos En Paralelo
+
+```
+☁️ Cloud Function (HTTP Ingestion)
+        ↓
+📨 Pub/Sub Topic (temperature-alerts)
+        ↓
+☁️ Cloud Function
+        ↓
+📩 Notificación de alerta
+```
+
+
+
+
+
+
+
+
+
+
