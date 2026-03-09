@@ -149,6 +149,77 @@ Características
 
 </td> </tr> </table>
 
+---
+
+## 📊 Analytics Layer
+
+**Servicio principal:** BigQuery
+
+**Propósito:** almacenamiento analítico y consultas de alto rendimiento.
+
+**Características**
+📈 Análisis histórico de temperatura
+📊 Detección de anomalías
+⏱️ Análisis temporal de sensores
+📉 Monitoreo de cadena de frío
+
+Los datos son consumidos directamente por Looker Studio para generar dashboards operacionales.
+
+---
+
+## 📊 Dashboard
+
+Looker Studio permite visualizar:
+- Temperatura en tiempo real
+- Histórico de sensores
+- Alertas por temperaturas fuera de rango
+- Comparativa entre dispositivos
+
+BigQuery → Looker Studio → Dashboard IoT
+
+---
+
+## 📁 Estructura del Proyecto
+
+```
+iot-coldchain-pipeline//
+│
+├── 📂 .github/
+│   └── 📂 workflows/
+│       └── 📄 databricks-deploy.yml    # Pipeline CI/CD
+│
+├── 📂 dashboard/
+│   ├── 📷 Dashboard_powerBi.png        # Imagen dashboard
+│   └── 📄 Dashboard_AnalisisDePeliculas.pbix     # Archivo Power BI
+│
+├── 📂 reversion/
+│   └── 🐍 Reversion.py     # REVOKES
+│
+├── 📂 .github/workflows/
+│    └── 📄 deploy-notebook.yml       # Archivo yaml
+│
+├── 📂 seguridad/
+│   └── 🐍 Permisos.py                # Grants
+│
+├── 📂 scripts/
+│   └── 📄 CreacionSQL.py             # CReacion del catalog, schemas, etc.
+│
+├── 📂 proceso/
+│   ├── 🐍 Ingest_movies.py            # Bronze Layer
+│   ├── 🐍 Ingest_rating.py            # Bronze Layer
+│   ├── 🐍 Transform.py                # Silver Layer
+│   ├── 🐍 Load.py                     # Gold Layer
+│   └── 🐍 DeltaSharing.py             # Exportacion de la tabla movies_insight
+│
+├── 📂 certificaiones/
+│   ├── 📄 DatabricksFundamentals.jpeg                # Acreditacion de Fundamentos de Databricks
+│   ├── 📄 GenerativeAIFundamentals.jpg               # Acreditacion de Fundamentos de AI Generativa
+│   └── 📄 Platform Administrator.png                 # Acreditacion de Administrador de plataforma
+│
+└── 📄 README.md
+```
+
+
 
 
 
