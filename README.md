@@ -85,7 +85,7 @@ La arquitectura Cloud Function → Pub/Sub → Dataflow → BigQuery → Looker 
 ### 📦 Componentes del Pipeline
 
 <table> <tr> <td width="33%" valign="top">
-🌡️ IoT Layer
+🌡️ IoT Layer 
 
 Propósito: Captura de datos
 
