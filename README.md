@@ -1,5 +1,5 @@
 # ⭐ IoT Cold Chain Analytics Pipeline
-### Arquitectura Medallion en GCP
+### Arquitectura en GCP
 
 [![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white)](https://databricks.com/)
 [![Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white)](https://azure.microsoft.com/)
@@ -14,6 +14,7 @@
 
 ## ▶️ Diagrama:
 
+![I1](arquitectura/Arquitectura.png)
 
 
 ## 🎯 Descripción
