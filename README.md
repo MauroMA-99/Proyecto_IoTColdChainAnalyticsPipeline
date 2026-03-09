@@ -33,7 +33,7 @@ El pipeline permite detectar anomalías de temperatura, almacenar históricos de
 
 ## 🖥️ Prototipo
 
-![I1](imagenes/hardware.png)
+![I2](imagenes/hardware.png)
 
 
 </div>
@@ -185,7 +185,6 @@ Looker Studio permite visualizar:
 - Temperatura en tiempo real
 - Histórico de sensores
 - Alertas por temperaturas fuera de rango
-- Comparativa entre dispositivos
 
 BigQuery → Looker Studio → Dashboard IoT
 
@@ -239,27 +238,51 @@ iot-coldchain-pipeline/
 
 ### 1️⃣. Creo los topics que voy a utilizar
 
+![I3](imagenes/CreacionTopicos.png)
+
 
 ### 2️⃣. Creo los Cloud Run Functions que voy a utilizar
+
+![I4](imagenes/CreacionCloudRunFunctions.png)
+
+![I5](imagenes/CreacionCloudRunFunctions2.png)
 
 
 ### 3️⃣. Creo la conexion en el ESP-32 y cargo el codigo.
 
+![I6](imagenes/conexion_DS18B20-ESP32.jpg)
+
 
 ### 4️⃣. El Cloud Function "sd-iotcoldchain" ya esta programado para hacer las publicaciones
+
+![I7](imagenes/sd-iotcoldchain.png)
 
 
 ### 5️⃣. Para el flujo principal ejecutamos dataflow_pipeline.py (antes creamos el bucket bucket_coldchain) 
 
+![I8](imagenes/dataflow.png)
+
 
 ### 6️⃣. En BigQuery creamos la tabla bronze y las vistas silver y golden
+
+![I9](imagenes/BigQuery.png)
 
 
 ### 7️⃣. En Looker Studio creamos la dashboard 
 
+![I10](dashboard/looker_dashboard.png)
+
 
 ### 8️⃣. Para el caso del flujo paralelo, "temperature-alerts" captura las temperaturas fuera del rango y "temperature-alert-email" envia un correo
 
+![I11](imagenes/temperature-alert-email.png)
+
+![I12](imagenes/Correo.png)
+
+
+### 9️⃣. Para simular un entorno frio y hacer las pruebas, sumergí el sensor en agua con hielo
+
+![I13](imagenes/simulacion.png)
 
 ---
 
