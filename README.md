@@ -1,6 +1,6 @@
 # ⭐ IoT Cold Chain Analytics Pipeline
 
-*Pipeline de datos en tiempo real para monitoreo de temperatura en sensores IoT utilizando arquitectura serverless y procesamiento streaming.*
+*Pipeline de datos en tiempo real para monitoreo de temperatura con sensores IoT utilizando arquitectura serverless y procesamiento streaming.*
 
 </div>
 
