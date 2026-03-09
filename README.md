@@ -82,8 +82,72 @@ La arquitectura Cloud Function → Pub/Sub → Dataflow → BigQuery → Looker 
 📩 Notificación de alerta
 ```
 
+### 📦 Componentes del Pipeline
 
+<table> <tr> <td width="33%" valign="top">
+🌡️ IoT Layer
 
+Propósito: Captura de datos
+
+Componentes
+
+ESP32
+
+Sensor de temperatura DS18B20
+
+Características
+
+✅ Lectura de temperatura
+
+✅ Envío de datos vía HTTP
+
+✅ Intervalo configurable de envío
+
+✅ Identificación de dispositivo (device_id)
+
+</td> <td width="33%" valign="top">
+☁️ Ingestion Layer
+
+Propósito: Recepción de eventos
+
+Servicios
+
+Cloud Functions
+
+Pub/Sub
+
+Características
+
+✅ Recepción HTTP de sensores
+
+✅ Validación de payload
+
+✅ Publicación en tópico Pub/Sub
+
+✅ Arquitectura desacoplada
+
+</td> <td width="33%" valign="top">
+⚡ Processing Layer
+
+Propósito: Transformación streaming
+
+Servicios
+
+Dataflow
+
+Características
+
+✅ Procesamiento en tiempo real
+
+✅ Limpieza de datos
+
+✅ Agregado de timestamps
+
+✅ Validación de rangos de temperatura
+
+✅ Preparación para análisis
+
+</td> </tr> </table>
 
 
 
