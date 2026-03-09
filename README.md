@@ -197,10 +197,14 @@ BigQuery → Looker Studio → Dashboard IoT
 iot-coldchain-pipeline/
 │
 ├── 📂 cloud_function/
-│   └── ingest_sensor_data.py        # Endpoint HTTP para sensores
+│   ├── 📂 sd-iotcoldchain
+│   │    ├── main.py
+│   │    └── requirements.txt
+│   └── 📂 temperature-alert-email
+│        └── main.py
 │
 ├── 📂 dataflow/
-│   └── streaming_pipeline.py        # Pipeline de procesamiento
+│   └── dataflow_pipeline.py       # Pipeline de procesamiento
 │
 ├── 📂 esp32/
 │   └── main.py                      # Código del sensor
@@ -210,6 +214,11 @@ iot-coldchain-pipeline/
 │
 ├── 📂 arquitectura/
 │   └── arquitectura_pipeline.png
+│
+├── 📂 BigQuery/
+│   └── creacion_vistas.sql
+│
+├── 📂 imagenes/
 │
 └── 📄 README.md
 ```
