@@ -182,45 +182,37 @@ BigQuery → Looker Studio → Dashboard IoT
 ## 📁 Estructura del Proyecto
 
 ```
-iot-coldchain-pipeline//
+iot-coldchain-pipeline/
 │
-├── 📂 .github/
-│   └── 📂 workflows/
-│       └── 📄 databricks-deploy.yml    # Pipeline CI/CD
+├── 📂 cloud_function/
+│   └── ingest_sensor_data.py        # Endpoint HTTP para sensores
+│
+├── 📂 dataflow/
+│   └── streaming_pipeline.py        # Pipeline de procesamiento
+│
+├── 📂 esp32/
+│   └── main.py                      # Código del sensor
 │
 ├── 📂 dashboard/
-│   ├── 📷 Dashboard_powerBi.png        # Imagen dashboard
-│   └── 📄 Dashboard_AnalisisDePeliculas.pbix     # Archivo Power BI
+│   └── looker_dashboard.png
 │
-├── 📂 reversion/
-│   └── 🐍 Reversion.py     # REVOKES
-│
-├── 📂 .github/workflows/
-│    └── 📄 deploy-notebook.yml       # Archivo yaml
-│
-├── 📂 seguridad/
-│   └── 🐍 Permisos.py                # Grants
-│
-├── 📂 scripts/
-│   └── 📄 CreacionSQL.py             # CReacion del catalog, schemas, etc.
-│
-├── 📂 proceso/
-│   ├── 🐍 Ingest_movies.py            # Bronze Layer
-│   ├── 🐍 Ingest_rating.py            # Bronze Layer
-│   ├── 🐍 Transform.py                # Silver Layer
-│   ├── 🐍 Load.py                     # Gold Layer
-│   └── 🐍 DeltaSharing.py             # Exportacion de la tabla movies_insight
-│
-├── 📂 certificaiones/
-│   ├── 📄 DatabricksFundamentals.jpeg                # Acreditacion de Fundamentos de Databricks
-│   ├── 📄 GenerativeAIFundamentals.jpg               # Acreditacion de Fundamentos de AI Generativa
-│   └── 📄 Platform Administrator.png                 # Acreditacion de Administrador de plataforma
+├── 📂 arquitectura/
+│   └── arquitectura_pipeline.png
 │
 └── 📄 README.md
 ```
 
+---
+## ⚙️ Requisitos Previos
 
-
+- ☁️ Cuenta en Google Cloud
+- 🔐 Proyecto GCP configurado
+- 📡 Tópico Pub/Sub creado
+- ⚡ Pipeline Dataflow configurado
+- 🗄️ Dataset en BigQuery
+- 📊 Dashboard en Looker Studio
+- 🌡️ Dispositivo ESP32 + sensor DS18B20
+---
 
 
 
