@@ -12,6 +12,10 @@
 
 </div>
 
+## ▶️ Diagrama:
+
+
+
 ## 🎯 Descripción
 
 📄 IoT Cold Chain Analytics Pipeline es un proyecto de ingeniería de datos orientado al monitoreo en tiempo real de sensores de temperatura mediante dispositivos IoT basados en ESP32.
@@ -212,6 +216,34 @@ iot-coldchain-pipeline/
 - 🗄️ Dataset en BigQuery
 - 📊 Dashboard en Looker Studio
 - 🌡️ Dispositivo ESP32 + sensor DS18B20
+---
+
+## 🚀 Descripción del proceso
+
+### 1️⃣. Creo los topics que voy a utilizar
+
+
+### 2️⃣. Creo los Cloud Run Functions que voy a utilizar
+
+
+### 3️⃣. Creo la conexion en el ESP-32 y cargo el codigo.
+
+
+### 4️⃣. El Cloud Function "sd-iotcoldchain" ya esta programado para hacer las publicaciones
+
+
+### 5️⃣. Para el flujo principal ejecutamos dataflow_pipeline.py (antes creamos el bucket bucket_coldchain) 
+
+
+### 6️⃣. En BigQuery creamos la tabla bronze y las vistas silver y golden
+
+
+### 7️⃣. En Looker Studio creamos la dashboard 
+
+
+### 8️⃣. Para el caso del flujo paralelo, "temperature-alerts" captura las temperaturas fuera del rango y "temperature-alert-email" envia un correo
+
+
 ---
 
 
