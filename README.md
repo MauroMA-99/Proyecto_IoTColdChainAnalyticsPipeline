@@ -30,6 +30,12 @@ El objetivo del proyecto es simular un escenario industrial como:
 
 El pipeline permite detectar anomalías de temperatura, almacenar históricos de medición y habilitar análisis analíticos y dashboards operacionales.
 
+
+## 🖥️ Prototipo
+
+![I1](imagenes/hardware.png)
+
+
 </div>
 
 ## ⚙️ ¿Por qué usar esta arquitectura?
@@ -45,6 +51,7 @@ La arquitectura Cloud Function → Pub/Sub → Dataflow → BigQuery → Looker 
 | **Looker Studio**   | Plataforma de visualización que permite construir dashboards operacionales conectados directamente a BigQuery.                  |
 
 
+
 **Ventajas principales de esta arquitectura**
 
 📡 Procesamiento en tiempo real
@@ -56,6 +63,9 @@ La arquitectura Cloud Function → Pub/Sub → Dataflow → BigQuery → Looker 
 ☁️ 100% serverless
 
 📊 Analytics-ready
+
+
+---
 
 ## 🏛️ Arquitectura
 
@@ -89,15 +99,13 @@ La arquitectura Cloud Function → Pub/Sub → Dataflow → BigQuery → Looker 
 
 ### 📦 Componentes del Pipeline
 
-<table> <tr> <td width="33%" valign="top">
+<table> <tr> <td width="25%" valign="top">
 🌡️ IoT Layer 
 
 Propósito: Captura de datos
 
-Componentes
-
-ESP32
-
+Componentes:
+ESP32 y 
 Sensor de temperatura DS18B20
 
 Características
@@ -110,15 +118,13 @@ Características
 
 ✅ Identificación de dispositivo (device_id)
 
-</td> <td width="33%" valign="top">
+</td> <td width="25%" valign="top">
 ☁️ Ingestion Layer
 
 Propósito: Recepción de eventos
 
-Servicios
-
+Servicios:
 Cloud Functions
-
 Pub/Sub
 
 Características
@@ -131,13 +137,12 @@ Características
 
 ✅ Arquitectura desacoplada
 
-</td> <td width="33%" valign="top">
+</td> <td width="25%" valign="top">
 ⚡ Processing Layer
 
 Propósito: Transformación streaming
 
-Servicios
-
+Servicios:
 Dataflow
 
 Características
@@ -152,23 +157,25 @@ Características
 
 ✅ Preparación para análisis
 
-</td> </tr> </table>
+</td><td width="25%" valign="top">
+📊 Analytics Layer
 
----
+Propósito: Almacenamiento analítico y consultas de alto rendimiento.
 
-## 📊 Analytics Layer
+Servicios:
+BigQuery
 
-**Servicio principal:** BigQuery
+Características
 
-**Propósito:** almacenamiento analítico y consultas de alto rendimiento.
-
-**Características**
 📈 Análisis histórico de temperatura
+
 📊 Detección de anomalías
+
 ⏱️ Análisis temporal de sensores
+
 📉 Monitoreo de cadena de frío
 
-Los datos son consumidos directamente por Looker Studio para generar dashboards operacionales.
+</td></tr> </table>
 
 ---
 
